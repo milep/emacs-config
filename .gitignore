@@ -1,0 +1,8 @@
+*.elc
+elpa/
+.cask/
+/.DS_Store
+auto-save-list/
+projectile*
+/backups/
+SessionDesktop.el
