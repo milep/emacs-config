@@ -2,3 +2,5 @@
 (global-set-key "\C-cd" 'duplicate-line)
 (global-set-key "\C-cc" 'comment-or-uncomment-region-or-line)
 (global-set-key "\C-xd" 'dired-jump)
+
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
