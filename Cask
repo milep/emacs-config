@@ -7,4 +7,10 @@
 (depends-on "git-gutter")
 (depends-on "git-gutter-fringe")
 (depends-on "git-rebase-mode")
+(depends-on "git-timemachine")
 (depends-on "magit")
+(depends-on "s")
+(depends-on "f")
+(depends-on "ace-jump-mode")
+(depends-on "pallet")
+
