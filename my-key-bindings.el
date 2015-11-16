@@ -4,3 +4,5 @@
 (global-set-key "\C-xd" 'dired-jump)
 
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
+;; Helm specific key bindings are in the my-helm.el

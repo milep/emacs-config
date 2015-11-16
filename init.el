@@ -10,6 +10,9 @@
 ;; My basic preferences
 (load "~/.emacs.d/my-config")
 
+;; Helm
+(load "~/.emacs.d/my-helm")
+
 ;; My functions
 (load "~/.emacs.d/my-functions")
 

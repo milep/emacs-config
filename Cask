@@ -15,6 +15,7 @@
 (depends-on "git-gutter")
 (depends-on "git-gutter-fringe")
 (depends-on "git-timemachine")
+(depends-on "helm")
 (depends-on "inflections")
 (depends-on "jump")
 (depends-on "magit")
