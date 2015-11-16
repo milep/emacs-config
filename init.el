@@ -1,7 +1,7 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-;; Updates cask file automagically
+;; Updates Cask file automagically
 (require 'pallet)
 (pallet-mode t)
 
