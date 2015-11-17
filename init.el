@@ -12,6 +12,9 @@
 
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/")
 
+(require 'fullframe)
+(fullframe magit-status magit-mode-quit-window)
+
 ;; My basic preferences
 (load "~/.emacs.d/my-config")
 

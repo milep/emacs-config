@@ -12,6 +12,7 @@
 (depends-on "f")
 (depends-on "findr")
 (depends-on "fringe-helper")
+(depends-on "fullframe")
 (depends-on "git-commit")
 (depends-on "git-gutter")
 (depends-on "git-gutter-fringe")
