@@ -11,6 +11,7 @@
 (depends-on "exec-path-from-shell")
 (depends-on "f")
 (depends-on "findr")
+(depends-on "flycheck")
 (depends-on "fringe-helper")
 (depends-on "fullframe")
 (depends-on "git-commit")

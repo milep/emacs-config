@@ -33,3 +33,6 @@
 (when (window-system)
   (require 'git-gutter-fringe))
 (global-git-gutter-mode +1)
+
+;; flycheck for syntax checking
+(add-hook 'after-init-hook #'global-flycheck-mode)
