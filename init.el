@@ -36,3 +36,7 @@
 
 ;; flycheck for syntax checking
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; Use aspell for ispell
+;; On OS X "brew install aspell"
+(setq ispell-program-name "aspell")
