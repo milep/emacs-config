@@ -5,6 +5,11 @@
 (require 'pallet)
 (pallet-mode t)
 
+(cond ((memq window-system '(mac ns))
+       (exec-path-from-shell-initialize))
+      ((equal window-system nil)
+       (exec-path-from-shell-copy-env "PATH")))
+
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/")
 
 ;; My basic preferences

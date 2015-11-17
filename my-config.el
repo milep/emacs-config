@@ -31,9 +31,8 @@
 ;; Remove the toolbar. It's ugly and I never use it. Also remove the
 ;; scroll bars; below, I set up the fringe to show my position in a
 ;; buffer.
-(when (window-system)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1))
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 (menu-bar-mode -1)
 

@@ -10,6 +10,9 @@
 ;; Replace M-x with helm-M-x
 (global-set-key (kbd "M-x")                          'undefined)
 (global-set-key (kbd "M-x")                          'helm-M-x)
+(global-set-key (kbd "M-y")                          'helm-show-kill-ring)
+(global-set-key (kbd "C-c f")                        'helm-recentf)
+(global-set-key (kbd "C-x C-f")                      'helm-find-files)
 
 
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
