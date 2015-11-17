@@ -40,3 +40,6 @@
 ;; Use aspell for ispell
 ;; On OS X "brew install aspell"
 (setq ispell-program-name "aspell")
+
+;; Enable company mode globally
+(add-hook 'after-init-hook 'global-company-mode)

@@ -6,6 +6,7 @@
 (depends-on "ace-jump-mode")
 (depends-on "async")
 (depends-on "cask")
+(depends-on "company")
 (depends-on "dash")
 (depends-on "epl")
 (depends-on "exec-path-from-shell")
