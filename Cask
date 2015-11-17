@@ -29,4 +29,5 @@
 (depends-on "rubocop")
 (depends-on "s")
 (depends-on "shut-up")
+(depends-on "smartparens")
 (depends-on "with-editor")

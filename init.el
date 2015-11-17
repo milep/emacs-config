@@ -43,3 +43,10 @@
 
 ;; Enable company mode globally
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; Default smartparens config
+(require 'smartparens-config)
+(require 'smartparens-ruby)
+(smartparens-global-mode)
+(show-smartparens-global-mode t)
+
