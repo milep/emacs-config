@@ -12,9 +12,6 @@
 
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/")
 
-(require 'fullframe)
-(fullframe magit-status magit-mode-quit-window)
-
 ;; My basic preferences
 (load "~/.emacs.d/my-config")
 
@@ -27,3 +24,12 @@
 ;; My key bindings
 (load "~/.emacs.d/my-key-bindings")
 
+(require 'fullframe)
+(fullframe magit-status magit-mode-quit-window)
+
+;; The fringe is the vertical region at the right and left of the
+;; buffer. Emacs lets you customize it of course.
+;; Here I set up git diffs and buffer position in the fringe.
+(when (window-system)
+  (require 'git-gutter-fringe))
+(global-git-gutter-mode +1)

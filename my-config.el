@@ -36,12 +36,6 @@
 
 (menu-bar-mode -1)
 
-;; The fringe is the vertical region at the right and left of the
-;; buffer. Emacs lets you customize it of course.
-;; Here I set up git diffs and buffer position in the fringe.
-(when (window-system)
-  (require 'git-gutter-fringe))
-(global-git-gutter-mode +1)
 (setq-default indicate-buffer-boundaries 'left)
 (setq-default indicate-empty-lines +1)
 
