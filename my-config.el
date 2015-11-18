@@ -47,3 +47,6 @@
       scroll-conservatively 10000
       scroll-preserve-screen-position 1
       scroll-error-top-bottom t)
+
+;; Typing y is sufficient for lazies
+(defalias 'yes-or-no-p 'y-or-n-p)
