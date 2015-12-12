@@ -50,3 +50,20 @@
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
 
+;; Ruby
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+(add-hook 'enh-ruby-mode-hook 'ruby-tools-mode)
+(setq enh-ruby-deep-indent-paren nil)
+
+;; Web mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)

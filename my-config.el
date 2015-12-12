@@ -50,3 +50,6 @@
 
 ;; Typing y is sufficient for lazies
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; don't create new frames
+(setq ns-pop-up-frames nil)
