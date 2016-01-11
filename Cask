@@ -20,6 +20,7 @@
 (depends-on "git-gutter")
 (depends-on "git-gutter-fringe")
 (depends-on "git-timemachine")
+(depends-on "haml-mode")
 (depends-on "helm")
 (depends-on "inflections")
 (depends-on "jump")
