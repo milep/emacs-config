@@ -67,3 +67,8 @@
   (setq web-mode-code-indent-offset 2)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+
+;; Projectile
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)

@@ -22,6 +22,7 @@
 (depends-on "git-timemachine")
 (depends-on "haml-mode")
 (depends-on "helm")
+(depends-on "helm-projectile")
 (depends-on "inflections")
 (depends-on "jump")
 (depends-on "magit")
