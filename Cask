@@ -34,6 +34,7 @@
 (depends-on "s")
 (depends-on "shut-up")
 (depends-on "smartparens")
+(depends-on "typescript-mode")
 (depends-on "web-mode")
 (depends-on "with-editor")
 (depends-on "yaml-mode")
