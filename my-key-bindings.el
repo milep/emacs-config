@@ -5,4 +5,5 @@
 
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
+(define-key 'help-command "R" 'yari-helm)
 ;; Helm specific key bindings are in the my-helm.el
