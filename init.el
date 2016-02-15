@@ -56,6 +56,11 @@
 (add-hook 'enh-ruby-mode-hook 'ruby-tools-mode)
 (setq enh-ruby-deep-indent-paren nil)
 
+;; Javascript
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; You may also want to hook it in for shell scripts running via node.js:
+;;   (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+
 ;; Web mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb" . web-mode))
@@ -83,3 +88,6 @@
 ;; (add-to-list 'grep-find-ignored-files "*.woff")
 ;; (add-to-list 'grep-find-ignored-files "*.eot")
 ;; (add-to-list 'grep-find-ignored-files "*.svg")
+
+;; Multiple cursors
+(require 'multiple-cursors)
