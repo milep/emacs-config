@@ -53,3 +53,6 @@
 
 ;; don't create new frames
 (setq ns-pop-up-frames nil)
+
+;; Use spaces instead of tabs
+(setq-default indent-tabs-mode nil)
