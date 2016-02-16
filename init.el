@@ -83,6 +83,7 @@
 (add-to-list 'grep-find-ignored-directories "tmp")
 (add-to-list 'grep-find-ignored-files "*.min.css")
 (add-to-list 'grep-find-ignored-files "*.min.js")
+(add-to-list 'grep-find-ignored-files "*.js.map")
 ;; (add-to-list 'grep-find-ignored-files "*.ttf")
 ;; (add-to-list 'grep-find-ignored-files "*.otf")
 ;; (add-to-list 'grep-find-ignored-files "*.woff")
