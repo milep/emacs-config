@@ -92,3 +92,6 @@
 
 ;; Multiple cursors
 (require 'multiple-cursors)
+
+;; Autosave bookmarks
+(setq bookmark-save-flag 1)

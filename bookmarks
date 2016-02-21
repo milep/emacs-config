@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("commandline_tools_and_tips.org"
+ (filename . "~/Dropbox/org/commandline_tools_and_tips.org")
+ (front-context-string . "http://explainsh")
+ (rear-context-string)
+ (position . 1))
+("Docker notes"
+ (filename . "~/Dropbox/org/programming.org")
+ (front-context-string . "* Docker\n** Help")
+ (rear-context-string . "ice spree start\n")
+ (position . 21882))
+("tunnarit.org"
+ (filename . "~/Dropbox/org/tunnarit.org")
+ (front-context-string . "* Work\n* Persona")
+ (rear-context-string)
+ (position . 1))
+("programming.org"
+ (filename . "~/Dropbox/org/programming.org")
+ (front-context-string . "\nhttp://www.amaz")
+ (rear-context-string)
+ (position . 1))
+)
