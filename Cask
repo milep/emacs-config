@@ -34,6 +34,7 @@
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "projectile")
+(depends-on "robe")
 (depends-on "rubocop")
 (depends-on "ruby-tools")
 (depends-on "s")
