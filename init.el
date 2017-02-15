@@ -49,6 +49,10 @@
 (require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
+;; fix erb autopairing (the extra >)
+;; http://emacs.stackexchange.com/questions/15188/smartparens-and-web-mode-conflict-to-add-extra-angular-bracket
+(sp-local-pair 'web-mode "%" "%" :wrap "C-%")
+(sp-local-pair 'web-mode "<" ">" :wrap "C->")
 
 ;; Ruby
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
@@ -79,6 +83,8 @@
   (setq web-mode-enable-auto-closing t)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+;; fix erb autopairing (the extra >)
+(setq web-mode-enable-auto-pairing nil)
 
 ;; Projectile
 (projectile-global-mode)
