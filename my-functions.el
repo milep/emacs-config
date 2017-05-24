@@ -45,3 +45,18 @@
       (setq beg (line-beginning-position) end (line-end-position))
       (next-line))
     (comment-or-uncomment-region beg end)))
+
+;; Set env variables from buffer
+(defun env-from-buffer ()
+  "Set env variables from buffer"
+  (interactive)
+  (dolist (line (split-string (buffer-string) "\n" t))
+    (let* ((kv (split-string line "=" t))
+          (key (nth 0 kv))
+          (value (nth 1 kv)))
+      (message "key %s value %s" key value)
+      (setenv key value)
+      )
+    )
+  )
+
