@@ -5,7 +5,9 @@
 
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
-(define-key 'help-command "R" 'yari-helm)
+;; yari-helm stopped working
+;; (define-key 'help-command "R" 'yari-helm)
+(define-key 'help-command "R" 'yari)
 ;; Helm specific key bindings are in the my-helm.el
 
 ;; Multiple cursors
@@ -13,3 +15,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; org clocking
+(global-set-key (kbd "C-c C-x C-j") 'org-clock-goto)
+(global-set-key (kbd "C-c C-x C-x") 'org-clock-in-last)
+(global-set-key (kbd "C-c C-x C-o") 'org-clock-out)

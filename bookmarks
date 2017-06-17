@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("commandline_tools_and_tips.org"
+(("projects.org"
+ (filename . "~/Dropbox/org/time_tracking/projects.org")
+ (front-context-string . "#+TITLE: Time tr")
+ (rear-context-string)
+ (position . 1))
+("commandline_tools_and_tips.org"
  (filename . "~/Dropbox/org/commandline_tools_and_tips.org")
  (front-context-string . "http://explainsh")
  (rear-context-string)

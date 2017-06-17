@@ -39,6 +39,7 @@
 (depends-on "php-mode")
 (depends-on "popup")
 (depends-on "projectile")
+(depends-on "rjsx-mode")
 (depends-on "robe")
 (depends-on "rubocop")
 (depends-on "ruby-tools")
