@@ -17,6 +17,9 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; org clocking
-(global-set-key (kbd "C-c C-x C-j") 'org-clock-goto)
-(global-set-key (kbd "C-c C-x C-x") 'org-clock-in-last)
-(global-set-key (kbd "C-c C-x C-o") 'org-clock-out)
+(global-set-key (kbd "C-c C-c C-j") 'org-clock-goto)
+(global-set-key (kbd "C-c C-c C-r") 'org-clock-in-last)
+(global-set-key (kbd "C-c C-c C-o") 'org-clock-out)
+
+;; other org stuff
+(global-set-key (kbd "C-c m") 'org-capture)

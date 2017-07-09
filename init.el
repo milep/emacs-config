@@ -10,6 +10,8 @@
       ((equal window-system nil)
        (exec-path-from-shell-copy-env "PATH")))
 
+(org-babel-load-file "~/.emacs.d/configuration.org")
+
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/")
 
 ;; My basic preferences
@@ -20,9 +22,6 @@
 
 ;; My functions
 (load "~/.emacs.d/my-functions")
-
-;; My key bindings
-(load "~/.emacs.d/my-key-bindings")
 
 (require 'fullframe)
 (fullframe magit-status magit-mode-quit-window)
@@ -113,8 +112,14 @@
 (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 (add-hook 'org-clock-cancel-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 
+;; org clock report format
+(setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
+
 ;; Yasnippet
 (require 'yasnippet)
 (yas-reload-all)
 (add-hook 'ruby-mode-hook 'yas-minor-mode)
 (add-hook 'enh-ruby-mode-hook 'yas-minor-mode)
+
+;; My key bindings
+(load "~/.emacs.d/my-key-bindings")
