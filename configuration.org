@@ -35,6 +35,16 @@
   (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
   (add-hook 'org-clock-cancel-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 #+END_SRC
+** agenda files
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-files (quote ("~/Dropbox/org-mode/index.org"
+                                 "~/Dropbox/org-mode/time-tracking.org"
+                                 )))
+#+END_SRC
+** refile
+#+BEGIN_SRC emacs-lisp
+  (setq org-refile-targets (quote ((org-agenda-files :maxlevel . 9))))
+#+END_SRC
 ** org clock report format
 #+BEGIN_SRC emacs-lisp
   (setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
@@ -60,7 +70,7 @@
   (setq org-capture-templates
         '(("t" "Todo"
            entry
-           (file+headline org-index-file "Inbox")
+           (file+headline org-index-file "Index")
            "* TODO %?\n")))
 #+END_SRC
 ** key bindings
