@@ -116,6 +116,10 @@
 
 ;; Yasnippet
 (require 'yasnippet)
+;; I want space after comment
+(with-eval-after-load "snippets/prog-mode/.yas-setup.elc"
+  (defun yas-with-comment (str)
+    (format "%s %s%s" comment-start str comment-end)))
 (yas-reload-all)
 (add-hook 'ruby-mode-hook 'yas-minor-mode)
 (add-hook 'enh-ruby-mode-hook 'yas-minor-mode)
