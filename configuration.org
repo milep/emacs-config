@@ -73,12 +73,33 @@
            (file+headline org-index-file "Index")
            "* TODO %?\n")))
 #+END_SRC
+** copy tasks from inbox
+#+BEGIN_SRC emacs-lisp
+  (defun copy-tasks-from-inbox ()
+    (when (file-exists-p org-inbox-file)
+      (save-excursion
+        (find-file org-index-file)
+        (goto-char (point-max))
+        (insert-file-contents org-inbox-file)
+        (delete-file org-inbox-file))))
+#+END_SRC
+** open index file
+#+BEGIN_SRC emacs-lisp
+  (defun open-index-file ()
+    "Open the master org TODO list."
+    (interactive)
+    (copy-tasks-from-inbox)
+    (find-file org-index-file)
+    (flycheck-mode -1)
+    (end-of-buffer))
+#+END_SRC
 ** key bindings
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-c C-c C-j") 'org-clock-goto)
   (global-set-key (kbd "C-c C-c C-r") 'org-clock-in-last)
   (global-set-key (kbd "C-c C-c C-o") 'org-clock-out)
   (global-set-key (kbd "C-c m") 'org-capture)
+  (global-set-key (kbd "C-c i") 'open-index-file)
 #+END_SRC
 
 * JSON export

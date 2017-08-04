@@ -12,13 +12,22 @@
   (other-window 1 nil)
   (switch-to-next-buffer)
   )
- 
+
 (global-set-key (kbd "C-x 2") 'vsplit-last-buffer)
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
+
+(add-to-list 'org-structure-template-alist
+             '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
 
 (add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
 (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 (add-hook 'org-clock-cancel-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
+
+(setq org-agenda-files (quote ("~/Dropbox/org-mode/index.org"
+                               "~/Dropbox/org-mode/time-tracking.org"
+                               )))
+
+(setq org-refile-targets (quote ((org-agenda-files :maxlevel . 9))))
 
 (setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
 
@@ -26,26 +35,43 @@
 
 (setq org-directory "~/Dropbox/org-mode")
 (defun org-file-path (filename)
-"Return the absolute address of an org file, given its relative name."
+  "Return the absolute address of an org file, given its relative name."
   (concat (file-name-as-directory org-directory) filename))
 
 (setq org-inbox-file "~/Dropbox/inbox.org")
 (setq org-index-file (org-file-path "index.org"))
 (setq org-archive-location
-  (concat (org-file-path "archive.org") "::* From %s"))
+      (concat (org-file-path "archive.org") "::* From %s"))
 
 (setq org-agenda-files (list org-index-file))
 
 (setq org-capture-templates
       '(("t" "Todo"
          entry
-         (file+headline org-index-file "Inbox")
+         (file+headline org-index-file "Index")
          "* TODO %?\n")))
+
+(defun copy-tasks-from-inbox ()
+  (when (file-exists-p org-inbox-file)
+    (save-excursion
+      (find-file org-index-file)
+      (goto-char (point-max))
+      (insert-file-contents org-inbox-file)
+      (delete-file org-inbox-file))))
+
+(defun open-index-file ()
+  "Open the master org TODO list."
+  (interactive)
+  (copy-tasks-from-inbox)
+  (find-file org-index-file)
+  (flycheck-mode -1)
+  (end-of-buffer))
 
 (global-set-key (kbd "C-c C-c C-j") 'org-clock-goto)
 (global-set-key (kbd "C-c C-c C-r") 'org-clock-in-last)
 (global-set-key (kbd "C-c C-c C-o") 'org-clock-out)
 (global-set-key (kbd "C-c m") 'org-capture)
+(global-set-key (kbd "C-c i") 'open-index-file)
 
 ;; Provides function to export current org buffer as JSON structure
 ;; to $file.org.json. Adapted from an org-mode mailing post by
