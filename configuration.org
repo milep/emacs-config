@@ -55,23 +55,28 @@
 #+END_SRC
 ** org-capture
 #+BEGIN_SRC emacs-lisp
-  (setq org-directory "~/Dropbox/org-mode")
-  (defun org-file-path (filename)
-    "Return the absolute address of an org file, given its relative name."
-    (concat (file-name-as-directory org-directory) filename))
+    (setq org-directory "~/Dropbox/org-mode")
+    (defun org-file-path (filename)
+      "Return the absolute address of an org file, given its relative name."
+      (concat (file-name-as-directory org-directory) filename))
 
-  (setq org-inbox-file "~/Dropbox/inbox.org")
-  (setq org-index-file (org-file-path "index.org"))
-  (setq org-archive-location
-        (concat (org-file-path "archive.org") "::* From %s"))
+    (setq org-inbox-file "~/Dropbox/inbox.org")
+    (setq org-index-file (org-file-path "index.org"))
+    (setq org-archive-location
+          (concat (org-file-path "archive.org") "::* From %s"))
 
-  (setq org-agenda-files (list org-index-file))
+    (setq org-agenda-files (list org-index-file))
 
-  (setq org-capture-templates
-        '(("t" "Todo"
-           entry
-           (file+headline org-index-file "Index")
-           "* TODO %?\n")))
+    (setq org-capture-templates
+          '(("t" "Todo"
+             entry
+             (file+headline org-index-file "Index")
+             "* TODO %?\n")
+
+            ("i" "Idea"
+             entry
+             (file+headline org-index-file "Ideas")
+             "* %?\n")))
 #+END_SRC
 ** copy tasks from inbox
 #+BEGIN_SRC emacs-lisp
